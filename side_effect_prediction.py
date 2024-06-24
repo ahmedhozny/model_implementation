@@ -15,7 +15,7 @@ ddi_model.load_model(model_load_path='./trained_model/', model_name='ddi_model_w
                      threshold_name='ddi_model_threshold.csv')
 
 
-def predict(drug1_cid: int, drug2_cid: int, side_effect_UMLS_CUI: str):
+async def predict(drug1_cid: int, drug2_cid: int, side_effect_UMLS_CUI: str):
     try:
         side_effect_type = se_UMLS_id[side_effect_UMLS_CUI]
     except NameError:
