@@ -33,6 +33,6 @@ async def predict(drug1_cid: int, drug2_cid: int, side_effect_UMLS_CUI: str):
         "drug_1": drug_info_dict[drug1_cid],
         "drug_2": drug_info_dict[drug2_cid],
         "se": side_effect_dict[side_effect_type],
-        "predicted_label": predicted_label.predicted_label[0],
-        "predicted_score": predicted_label.predicted_score[0]
+        "predicted_label": int(predicted_label.predicted_label[0]),
+        "predicted_score": float(predicted_label.predicted_score[0])
     }
