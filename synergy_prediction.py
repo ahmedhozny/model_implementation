@@ -17,10 +17,10 @@ torch.cuda.manual_seed_all(seed)  # if you are using multi-GPU.
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
-
-sentence_transformer = SentenceTransformer('simcsesqrt-model', device=torch.device("cuda"))
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+sentence_transformer = SentenceTransformer('simcsesqrt-model', device=device)
+
 
 model = MultiViewNet()
 checkpoint = torch.load('mainsplit-attention-comb', map_location=device)
