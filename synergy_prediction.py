@@ -50,4 +50,4 @@ async def predict(smile_1_vectors, smile_2_vectors, fp1_vectors, fp2_vectors):
     fp2_vectors = torch.FloatTensor([fp2_vectors] * len(context)).to(device)
 
     predicted = model.forward(smile_1_vectors, smile_2_vectors, context, fp1_vectors, fp2_vectors)
-    return np.linalg.norm(predicted.cpu().detach().numpy(), "fro")
+    return float(np.linalg.norm(predicted.cpu().detach().numpy(), "fro"))
