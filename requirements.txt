@@ -16,3 +16,6 @@ tensorflow==2.15.0.post1
 pandas==2.1.4
 numpy==1.26.2
 seaborn==0.13.2
+
+fastapi
+uvicorn
