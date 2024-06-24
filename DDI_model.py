@@ -18,6 +18,10 @@ from sklearn.metrics import roc_auc_score
 from sklearn.metrics import roc_curve
 from tensorflow.compat.v1.keras.utils import to_categorical
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+
 
 # find feature in the generator
 def find_exp(drug_df, ts_exp, column_name):

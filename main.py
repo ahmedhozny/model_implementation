@@ -5,6 +5,9 @@ from pydantic import BaseModel
 from synergy_prediction import predict as predict_senergy, smiles_encode
 from side_effect_prediction import predict as predict_side_effect
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 
 class SideEffectsPrediction(BaseModel):
     drug1_id: int
